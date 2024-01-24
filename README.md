@@ -9,9 +9,10 @@ python=3.7.12
 
 R=4.2.1
 
-Download scripts to your local working directory, and modify params.r and export_params.bash
+Download scripts to your local working directory.
 ```
 unzip ddx_cofdr_workflow.zip && cd ddx_cofdr_workflow
+# Pleases modify paths of required files/tools or other paramaters in params.r and export_params.bash before any analysis.
 ```
 ## 1. Data preprocessing
 Make subdirectories
