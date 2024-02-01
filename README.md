@@ -53,7 +53,7 @@ lapply(c(t1, t2), function(pheno){
 	Run_DDx_Gene_MAGMA(decor_gwas_paths=ddx_gwas, magma_dir=magma_dir_ddx, save_dir=twas_dir_ddx)
 	Run_DDx_Gene_PrediXcan(traits=pheno, decor_gwas_paths=ddx_gwas, metaxcan_dir=twas_dir_ddx, save_dir=twas_dir_ddx)
 	Run_DDx_Gene_PWAS(traits=pheno, decor_gwas_paths=ddx_gwas, pwas_dir=pwas_dir_ddx, save_dir=twas_dir_ddx)
-}
+})
 ```
 Analyze gwas via FUMA "SNP2GENE" and "Cell Type" module. Save corresponding zipped results files to 01_data/04_FUMA_Results/{SNP2GENE,Cell_Type} and rename results files with trait names
 
