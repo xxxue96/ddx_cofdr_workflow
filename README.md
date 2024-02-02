@@ -27,7 +27,6 @@ gwas_formatted = Standardise_GWAS(gwas_sumstats_path=gwas, save_path=paste0("01_
 ```
 Run LDSC, and save rg and intercept with traits as rownames and colnames to 01_data/LDSC_Results. 
 ```
-export ldsc=ldsc_tool_directory # download from https://github.com/bulik/ldsc
 bash 04_script/02_01_Run_LDSC.bash t1 t2 # multiple traits are accepted
 Rscript 04_script/02_02_Extract_LDSC.r t1 t2
 ```
@@ -61,7 +60,12 @@ lapply(c(t1, t2), function(pheno){
 Analyze gwas via FUMA https://fuma.ctglab.nl "SNP2GENE" and "Cell Type" module. Save corresponding zipped results files to 01_data/04_FUMA_Results/{SNP2GENE,Cell_Type} and rename results files with trait names
 
 ## 2. Differeniation analysis
-Run SNP- and gene-level differentiation analysis
+Make subdirectories
+```
+mkdir -p 02_ddx/{01_DDx_Results,02_DDx_SigSNP,03_DDx_Clump,04_FUMA_Results/{SNP2GENE,Cell_Type,Image/{01_SNP_Manhattan,02_Gene_Manhattan,03_MAGMA_Tissue,04_SNP_Annot,05_Cell_Type}},05_CCGWAS_Results,06_CCGWAS_SigSNP,07_SNP_Compare,08_DDx_Gene_Result,09_CCGWAS_Gene_Result,10_DDx_CCGWAS_Gene_Compare,11_Excel_Summary}
+```
+
+Run SNP- and gene-level differentiation analysis in R
 ```
 source("02_ddx/DDx_Workflow.r")
 source("02_ddx/DDx_Workflow_params.r")
