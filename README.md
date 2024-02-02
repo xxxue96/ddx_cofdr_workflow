@@ -97,13 +97,17 @@ DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_pat
 DDx_Count_Res(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_DDx_Count.txt")
 ```
 **Extension**: Multi-trait differentiation analysis
+
 Make subdirectories
 ```
 mkdir -p 02_ddx/{12_mtCOJO_Results,13_mtCOJO_Excel_Summary/{Figures,Tables}}
 ```
-
+Run mtCOJO in R
 ```
 
+```
+Format mtCOJO results to readable excel files in R
+```
 ```
 ## 3. Colocalization analysis
 Run SNP- and gene-level colocalization analysis
