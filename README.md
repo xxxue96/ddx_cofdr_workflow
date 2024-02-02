@@ -64,7 +64,6 @@ Make subdirectories
 ```
 mkdir -p 02_ddx/{01_DDx_Results,02_DDx_SigSNP,03_DDx_Clump,04_FUMA_Results/{SNP2GENE,Cell_Type,Image/{01_SNP_Manhattan,02_Gene_Manhattan,03_MAGMA_Tissue,04_SNP_Annot,05_Cell_Type}},05_CCGWAS_Results,06_CCGWAS_SigSNP,07_SNP_Compare,08_DDx_Gene_Result,09_CCGWAS_Gene_Result,10_DDx_CCGWAS_Gene_Compare,11_Excel_Summary/{Figures,Tables}}
 ```
-
 Run SNP- and gene-level differentiation analysis in R
 ```
 source("02_ddx/DDx_Workflow.r")
@@ -77,7 +76,7 @@ ddx_wrap_up(t1, t2)
 # gene-level
 ddx_wrap_up_gene(t1, t2)
 ```
-Format results to readable excel files
+Format results to readable excel files in R
 ```
 source("02_ddx/06_01_DDx_Format_Excel.r")
 source("02_ddx/06_02_DDx_Format_Image.r")
@@ -85,17 +84,26 @@ source("02_ddx/06_03_DDx_Excel_Summary.r")
 source("02_ddx/06_03_DDx_Excel_Summary_more_info.r")
 source("02_ddx/06_04_DDx_Count_Res.r")
 # format differentiation results to excel
-DDx_Format_Excel(t1, t2, save_dir="02_ddx/13_Excel_Summary/Tables")
+DDx_Format_Excel(t1, t2, save_dir="02_ddx/11_Excel_Summary/Tables")
 
 # summarize all images from FUMA SNP2GENE and Cell Type module (multiple t1 and t2 are accepted)
-DDx_Format_Image(t1, t2, save_path="02_ddx/13_Excel_Summary/Figures/all_trait_comparison_image.xlsx")
+DDx_Format_Image(t1, t2, save_path="02_ddx/11_Excel_Summary/Figures/all_trait_comparison_image.xlsx")
 
 # summarize all excel files in excel_dir (multiple excel_dir are accepted)
-DDx_Excel_Summary(excel_dir="02_ddx/13_Excel_Summary/Tables", save_path="02_ddx/13_Excel_Summary/Tables//all_trait_comparison_summary.xlsx")
-DDx_Excel_Summary_more_info(excel_dir="02_ddx/13_Excel_Summary/Tables", save_path="02_ddx/13_Excel_Summary/Tables/all_trait_comparison_summary_more_info.xlsx")
+DDx_Excel_Summary(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables//all_trait_comparison_summary.xlsx")
+DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables/all_trait_comparison_summary_more_info.xlsx")
 
 # summarize number of significant results 
-DDx_Count_Res(excel_dir="02_ddx/13_Excel_Summary/Tables", save_path="02_ddx/13_Excel_Summary/all_trait_comparison_DDx_Count.txt")
+DDx_Count_Res(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_DDx_Count.txt")
+```
+**Extension**: Multi-trait differentiation analysis
+Make subdirectories
+```
+mkdir -p 02_ddx/{12_mtCOJO_Results,13_mtCOJO_Excel_Summary/{Figures,Tables}}
+```
+
+```
+
 ```
 ## 3. Colocalization analysis
 Run SNP- and gene-level colocalization analysis
