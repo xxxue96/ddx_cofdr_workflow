@@ -104,7 +104,7 @@ mkdir -p 02_ddx/{12_mtCOJO_Results,13_mtCOJO_Excel_Summary/{Figures,Tables}}
 ```
 Run SNP- and gene-level differentiation analysis across multiple traits in R to find SNPs and genes specific to trait t1
 ```
-source("02_ddx/07_00_mtcojo_workflow.r")
+source("02_ddx/mtCOJO_workflow.r")
 source("02_ddx/mtCOJO_Workflow_params.r")
 
 # @mtcojo_name: set a pseudo-name for the mtCOJO-derived trait sumstats. Default is NULL to directly concatenate t1 and t2phenos as a pseudo-name.
