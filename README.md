@@ -90,7 +90,7 @@ DDx_Format_Excel(t1, t2, save_dir="02_ddx/11_Excel_Summary/Tables")
 DDx_Format_Image(t1, t2, save_path="02_ddx/11_Excel_Summary/Figures/all_trait_comparison_image.xlsx")
 
 # summarize all excel files in excel_dir (multiple excel_dir are accepted)
-DDx_Excel_Summary(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables//all_trait_comparison_summary.xlsx")
+DDx_Excel_Summary(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables/all_trait_comparison_summary.xlsx")
 DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables/all_trait_comparison_summary_more_info.xlsx")
 
 # summarize number of significant results 
@@ -113,6 +113,27 @@ mtCOJO_wrap_up_gene(t1, t2phenos=c(t2,t3), mtcojo_name=NULL)
 ```
 Format mtCOJO results to readable excel files in R
 ```
+source("02_ddx/07_01_mtcojo_Format_Excel.r")
+source("02_ddx/07_02_mtcojo_Format_Image.r")
+source("02_ddx/07_03_mtcojo_Excel_Summary.r")
+source("02_ddx/07_03_mtcojo_Excel_Summary_more_info.r")
+source("02_ddx/07_04_mtcojo_Count_Res.r")
+
+t2phenos = c(t2, t3) # more t2phenos are accepted
+traits = c(t1, t2phenos)
+
+# format multi-trait differentiation results to excel
+mtcojo_Format_Excel(t1, t2phenos, mtcojo_name=NULL, save_dir="13_mtCOJO_Excel_Summary/Tables/")
+
+# summarize all images from FUMA SNP2GENE and Cell Type module (directly use DDx_Format_Image())
+DDx_Format_Image(t1, t2=t2phenos, save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/Figures/", t1, "_mtCOJO_image.xlsx"), ddx_name=NULL)
+
+# summarize all excel files in excel_dir (multiple excel_dir are accepted)
+mtCOJO_Excel_Summary(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables/", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary.xlsx"))
+mtcojo_Excel_Summary_more_info(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables/", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary_more_info.xlsx")
+
+# summarize number of significant results
+mtcojo_Count_Res(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/Tables/",t1,"_mtCOJO_Count.txt"))
 ```
 ## 3. Colocalization analysis
 Make subdirectories
