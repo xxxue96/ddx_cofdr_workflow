@@ -115,6 +115,10 @@ Format mtCOJO results to readable excel files in R
 ```
 ```
 ## 3. Colocalization analysis
+Make subdirectories
+```
+mkdir -p 03_cofdr/{01_Cofdr_Result,02_Cofdr_SigSNP,03_Cofdr_Clump,04_Cofdr_Gene_Result,05_01_Cofdr_FUMA_Input,05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC},06_gwas_pw_Result,07_gwas_pw_SigSNP,08_HyPrColoc_Result,09_sigSNP_Comparison,10_Excel_Summary/{Figures,Tables},11_Multi_Cofdr_Summary/Tables}
+```
 Run SNP- and gene-level colocalization analysis
 ```
 source("03_cofdr/Cofdr_Workflow.r")
@@ -122,7 +126,7 @@ source("03_cofdr/Cofdr_Workflow_params.r")
 # snp-level
 cofdr_wrap_up(t1, t2)
 
-# Analyze cofdr-derived gwas via FUMA, and save results to 03_cofdr/05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC}
+# Analyze cofdr-derived gwas in 03_cofdr/05_01_Cofdr_FUMA_Input via FUMA, and save results to 03_cofdr/05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC}
 
 # gene-level
 cofdr_wrap_up_gene(t1, t2)
