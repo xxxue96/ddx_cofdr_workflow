@@ -169,7 +169,7 @@ Cofdr_Excel_Summary(excel_dir="03_cofdr/10_Excel_Summary/Tables", save_path="03_
 Cofdr_Excel_Summary_more_info(excel_dir="03_cofdr/10_Excel_Summary/Tables", save_path="03_cofdr/10_Excel_Summary/all_trait_comparison_summary_more_info.xlsx")
 
 # summarize number of significant results
-Cofdr_Count_Res(excel_dir="03_cofdr/10_Excel_Summary/Tables/", save_path="03_cofdr/10_Excel_Summary/all_trait_comparison_Cofdr_Count.txt")
+Cofdr_Count_Res(excel_dir="03_cofdr/10_Excel_Summary/Tables", save_path="03_cofdr/10_Excel_Summary/all_trait_comparison_Cofdr_Count.txt")
 ```
 
 
