@@ -123,7 +123,7 @@ t2phenos = c(t2, t3) # more t2phenos are accepted
 traits = c(t1, t2phenos)
 
 # format multi-trait differentiation results to excel
-mtcojo_Format_Excel(t1, t2phenos, mtcojo_name=NULL, save_dir="13_mtCOJO_Excel_Summary/Tables/")
+mtcojo_Format_Excel(t1, t2phenos, mtcojo_name=NULL, save_dir="13_mtCOJO_Excel_Summary/Tables")
 
 # summarize all images from FUMA SNP2GENE and Cell Type module (directly use DDx_Format_Image())
 DDx_Format_Image(t1, t2=t2phenos, save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/Figures/", t1, "_mtCOJO_image.xlsx"), ddx_name=NULL)
