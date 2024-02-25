@@ -90,8 +90,8 @@ DDx_Format_Excel(t1, t2, save_dir="02_ddx/11_Excel_Summary/Tables")
 DDx_Format_Image(t1, t2, save_path="02_ddx/11_Excel_Summary/Figures/all_trait_comparison_image.xlsx")
 
 # summarize all excel files in excel_dir (multiple excel_dir are accepted)
-DDx_Excel_Summary(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables/all_trait_comparison_summary.xlsx")
-DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/Tables/all_trait_comparison_summary_more_info.xlsx")
+DDx_Excel_Summary(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_summary.xlsx")
+DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_summary_more_info.xlsx")
 
 # summarize number of significant results 
 DDx_Count_Res(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_DDx_Count.txt")
