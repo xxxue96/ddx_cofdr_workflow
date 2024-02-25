@@ -129,8 +129,8 @@ mtcojo_Format_Excel(t1, t2phenos, mtcojo_name=NULL, save_dir="02_ddx/13_mtCOJO_E
 DDx_Format_Image(t1, t2=t2phenos, save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/Figures/", t1, "_mtCOJO_image.xlsx"), ddx_name=NULL)
 
 # summarize all excel files in excel_dir (multiple excel_dir are accepted)
-mtCOJO_Excel_Summary(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables/", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary.xlsx"))
-mtcojo_Excel_Summary_more_info(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables/", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary_more_info.xlsx")
+mtcojo_Excel_Summary(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary.xlsx"))
+mtcojo_Excel_Summary_more_info(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary_more_info.xlsx"))
 
 # summarize number of significant results
 mtcojo_Count_Res(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/Tables/",t1,"_mtCOJO_Count.txt"))
