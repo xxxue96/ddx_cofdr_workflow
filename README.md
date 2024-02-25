@@ -133,7 +133,7 @@ mtcojo_Excel_Summary(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_pat
 mtcojo_Excel_Summary_more_info(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/", t1, "_mtCOJO_summary_more_info.xlsx"))
 
 # summarize number of significant results
-mtcojo_Count_Res(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/Tables/",t1,"_mtCOJO_Count.txt"))
+mtcojo_Count_Res(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=paste0("02_ddx/13_mtCOJO_Excel_Summary/",t1,"_mtCOJO_Count.txt"))
 ```
 ## 3. Colocalization analysis
 Make subdirectories
