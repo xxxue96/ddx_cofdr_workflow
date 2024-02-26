@@ -97,6 +97,7 @@ DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_pat
 DDx_Count_Res(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_DDx_Count.txt")
 ```
 **Extension**: Multi-trait differentiation analysis
+
 Make subdirectories
 ```
 mkdir -p 02_ddx/{12_mtCOJO_Results,13_mtCOJO_Excel_Summary/{Figures,Tables}}
@@ -172,6 +173,7 @@ Cofdr_Excel_Summary_more_info(excel_dir="03_cofdr/10_Excel_Summary/Tables", save
 Cofdr_Count_Res(excel_dir="03_cofdr/10_Excel_Summary/Tables", save_path="03_cofdr/10_Excel_Summary/all_trait_comparison_Cofdr_Count.txt")
 ```
 **Extension**: Multi-trait colocalization analysis
+
 Make subdirectories
 ```
 mkdir -p 03_cofdr/11_Multi_Cofdr_Summary/Tables
