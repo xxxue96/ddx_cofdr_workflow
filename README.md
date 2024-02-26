@@ -97,7 +97,6 @@ DDx_Excel_Summary_more_info(excel_dir="02_ddx/11_Excel_Summary/Tables", save_pat
 DDx_Count_Res(excel_dir="02_ddx/11_Excel_Summary/Tables", save_path="02_ddx/11_Excel_Summary/all_trait_comparison_DDx_Count.txt")
 ```
 **Extension**: Multi-trait differentiation analysis
-
 Make subdirectories
 ```
 mkdir -p 02_ddx/{12_mtCOJO_Results,13_mtCOJO_Excel_Summary/{Figures,Tables}}
@@ -118,6 +117,7 @@ source("02_ddx/07_02_mtcojo_Format_Image.r")
 source("02_ddx/07_03_mtcojo_Excel_Summary.r")
 source("02_ddx/07_03_mtcojo_Excel_Summary_more_info.r")
 source("02_ddx/07_04_mtcojo_Count_Res.r")
+source("02_ddx/mtCOJO_Workflow_params.r")
 
 t2phenos = c(t2, t3) # more t2phenos are accepted
 traits = c(t1, t2phenos)
@@ -138,7 +138,7 @@ mtcojo_Count_Res(excel_dir="02_ddx/13_mtCOJO_Excel_Summary/Tables", save_path=pa
 ## 3. Colocalization analysis
 Make subdirectories
 ```
-mkdir -p 03_cofdr/{01_Cofdr_Result,02_Cofdr_SigSNP,03_Cofdr_Clump,04_Cofdr_Gene_Result,05_01_Cofdr_FUMA_Input,05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC},06_gwas_pw_Result,07_gwas_pw_SigSNP,08_HyPrColoc_Result,09_sigSNP_Comparison,10_Excel_Summary/{Figures,Tables},11_Multi_Cofdr_Summary/Tables}
+mkdir -p 03_cofdr/{01_Cofdr_Result,02_Cofdr_SigSNP,03_Cofdr_Clump,04_Cofdr_Gene_Result,05_01_Cofdr_FUMA_Input,05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC},06_gwas_pw_Result,07_gwas_pw_SigSNP,08_HyPrColoc_Result,09_sigSNP_Comparison,10_Excel_Summary/{Figures,Tables}}
 ```
 Run SNP- and gene-level colocalization analysis
 ```
@@ -170,6 +170,18 @@ Cofdr_Excel_Summary_more_info(excel_dir="03_cofdr/10_Excel_Summary/Tables", save
 
 # summarize number of significant results
 Cofdr_Count_Res(excel_dir="03_cofdr/10_Excel_Summary/Tables", save_path="03_cofdr/10_Excel_Summary/all_trait_comparison_Cofdr_Count.txt")
+```
+**Extension**: Multi-trait colocalization analysis
+Make subdirectories
+```
+mkdir -p 03_cofdr/11_Multi_Cofdr_Summary/Tables
+```
+Run SNP- and gene-level colocalization analysis across multiple traits in R to find SNPs and genes associated with multiple traits
+```
+source("03_cofdr/Multi_Cofdr_Workflow.r")
+source("03_cofdr/Multi_Cofdr_Workflow_params.r")
+
+
 ```
 
 
