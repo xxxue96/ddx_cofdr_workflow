@@ -190,7 +190,7 @@ source("03_cofdr/Multi_Cofdr_Workflow_params.r")
 # 4. Run gene-based cofdr among multiple traits
 
 #@cofdr_name: set a pseudo-name for the multi-cofdr/hyprcoloc derived trait sumstats. Default is NULL to directly concatenate t1 and t2_cofdr as a pseudo-name. 
-Run_Multi_Cofdr(t1="Flu_h_White", t2_cofdr=c("Pneumonia.meta","B2"), merged_path=NULL, t2_hyprcoloc=c("Pneumonia.meta","B2"), merged_path_hyprcoloc=NULL, cofdr_name=NULL)
+Run_Multi_Cofdr(t1="Flu_h_White", t2_cofdr=c("Pneumonia.meta","B2"), t2_hyprcoloc=c("Pneumonia.meta","B2"), cofdr_name=NULL)
 ```
 
 
