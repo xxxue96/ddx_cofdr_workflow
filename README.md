@@ -192,7 +192,27 @@ source("03_cofdr/Multi_Cofdr_Workflow_params.r")
 #@cofdr_name: set a pseudo-name for the multi-cofdr/hyprcoloc derived trait sumstats. Default is NULL to directly concatenate t1 and t2_cofdr as a pseudo-name. 
 Run_Multi_Cofdr(t1="Flu_h_White", t2_cofdr=c("Pneumonia.meta","B2"), t2_hyprcoloc=c("Pneumonia.meta","B2"), cofdr_name=NULL)
 ```
+Format multi-trait colocalization results to readable excel files in R
+```
+source("03_cofdr/06_01_Cofdr_Format_Excel.r")
+source("03_cofdr/07_03_Multi_Cofdr_Excel_Summary.r")
+source("03_cofdr/07_03_Multi_Cofdr_Excel_Summary_more_info.r")
+source("03_cofdr/07_04_Multi_Cofdr_Count_Res.r")
+source("03_cofdr/Multi_Cofdr_Workflow_params.r")
 
+t1 = "Flu_h_White"
+t2 = c("Pneumonia.meta","B2")
+
+# format multi-trait colocalization results to excel
+Cofdr_Format_Excel(t1, t2, save_dir="11_Multi_Cofdr_Summary/Tables", multi_cofdr=TRUE)
+
+# summarize all excel files in excel_dir (multiple excel_dir are accepted)
+Multi_Cofdr_Excel_Summary(excel_dir="03_cofdr/11_Multi_Cofdr_Summary/Tables", save_path=paste0("03_cofdr/11_Multi_Cofdr_Summary/", t1, "_multi_cofdr_summary.xlsx"))
+Multi_Cofdr_Excel_Summary_more_info(excel_dir="03_cofdr/11_Multi_Cofdr_Summary/Tables", save_path=paste0("03_cofdr/11_Multi_Cofdr_Summary/", t1, "_multi_cofdr_summary_more_info.xlsx"))
+
+# summarize number of significant results
+Multi_Cofdr_Count_Res(excel_dir=excel_dir="03_cofdr/11_Multi_Cofdr_Summary/Tables", save_path=paste0("03_cofdr/11_Multi_Cofdr_Summary/", t1, "_multi_cofdr_Count.txt"))
+```
 
 
 
