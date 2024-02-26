@@ -184,7 +184,13 @@ Run SNP- and gene-level colocalization analysis across multiple traits in R to f
 source("03_cofdr/Multi_Cofdr_Workflow.r")
 source("03_cofdr/Multi_Cofdr_Workflow_params.r")
 
+# 1. Run cofdr among multiple traits (e.g. We may choose traits sharing at least one locus or traits functionally correlated)
+# 2. Run hyprcoloc among multiple traits (Any traits can be applied as input since hyprcoloc can cluster colocalized traits automatically through Bayesian divisive clustering algorithm)
+# 3. Compare cofdr and hyprcoloc results to find out validated colocalized loci.
+# 4. Run gene-based cofdr among multiple traits
 
+#@cofdr_name: set a pseudo-name for the multi-cofdr/hyprcoloc derived trait sumstats. Default is NULL to directly concatenate t1 and t2_cofdr as a pseudo-name. 
+Run_Multi_Cofdr(t1="Flu_h_White", t2_cofdr=c("Pneumonia.meta","B2"), merged_path=NULL, t2_hyprcoloc=c("Pneumonia.meta","B2"), merged_path_hyprcoloc=NULL, cofdr_name=NULL)
 ```
 
 
