@@ -156,6 +156,7 @@ cofdr_wrap_up_gene(t1, t2)
 Format results to readable excel files
 ```
 source("03_cofdr/06_01_Cofdr_Format_Excel.r")
+source("03_cofdr/06_02_Cofdr_Format_Image.r")
 source("03_cofdr/06_03_Cofdr_Excel_Summary.r")
 source("03_cofdr/06_03_Cofdr_Excel_Summary_more_info.r")
 source("03_cofdr/06_04_Cofdr_Count_Res.r")
