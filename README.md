@@ -68,6 +68,10 @@ Run SNP- and gene-level differentiation analysis in R
 ```
 source("02_ddx/DDx_Workflow.r")
 source("02_ddx/DDx_Workflow_params.r")
+
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+
 # snp-level
 ddx_wrap_up(t1, t2)
 
