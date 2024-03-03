@@ -87,6 +87,10 @@ source("02_ddx/06_02_DDx_Format_Image.r")
 source("02_ddx/06_03_DDx_Excel_Summary.r")
 source("02_ddx/06_03_DDx_Excel_Summary_more_info.r")
 source("02_ddx/06_04_DDx_Count_Res.r")
+
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+
 # format differentiation results to excel
 DDx_Format_Excel(t1, t2, save_dir="02_ddx/11_Excel_Summary/Tables")
 
@@ -111,6 +115,10 @@ Run SNP- and gene-level differentiation analysis across multiple traits in R to 
 source("02_ddx/mtCOJO_Workflow.r")
 source("02_ddx/mtCOJO_Workflow_params.r")
 
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+t3 = "B2"
+
 # @mtcojo_name: set a pseudo-name for the mtCOJO-derived trait sumstats. Default is NULL to directly concatenate t1 and t2phenos as a pseudo-name.
 mtCOJO_wrap_up(t1, t2phenos=c(t2,t3), mtcojo_name=NULL) # more t2phenos are accepted
 mtCOJO_wrap_up_gene(t1, t2phenos=c(t2,t3), mtcojo_name=NULL)
@@ -124,6 +132,9 @@ source("02_ddx/07_03_mtcojo_Excel_Summary_more_info.r")
 source("02_ddx/07_04_mtcojo_Count_Res.r")
 source("02_ddx/mtCOJO_Workflow_params.r")
 
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+t3 = "B2"
 t2phenos = c(t2, t3) # more t2phenos are accepted
 traits = c(t1, t2phenos)
 
@@ -149,6 +160,10 @@ Run SNP- and gene-level colocalization analysis
 ```
 source("03_cofdr/Cofdr_Workflow.r")
 source("03_cofdr/Cofdr_Workflow_params.r")
+
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+
 # snp-level
 cofdr_wrap_up(t1, t2)
 
@@ -164,6 +179,10 @@ source("03_cofdr/06_02_Cofdr_Format_Image.r")
 source("03_cofdr/06_03_Cofdr_Excel_Summary.r")
 source("03_cofdr/06_03_Cofdr_Excel_Summary_more_info.r")
 source("03_cofdr/06_04_Cofdr_Count_Res.r")
+
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+
 # format colocalization results to excel
 Cofdr_Format_Excel(t1, t2, save_dir="03_cofdr/10_Excel_Summary/Tables")
 
