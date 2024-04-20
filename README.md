@@ -62,15 +62,18 @@ Analyze gwas via FUMA "SNP2GENE" and "Cell Type" module. Save corresponding zipp
 ## 2. Differeniation analysis
 Make subdirectories
 ```
-mkdir -p 02_ddx/{01_DDx_Results,02_DDx_SigSNP,03_DDx_Clump,04_FUMA_Results/{SNP2GENE,Cell_Type,Image/{01_SNP_Manhattan,02_Gene_Manhattan,03_MAGMA_Tissue,04_SNP_Annot,05_Cell_Type}},05_CCGWAS_Results,06_CCGWAS_SigSNP,07_SNP_Compare,08_DDx_Gene_Result,09_CCGWAS_Gene_Result,10_DDx_CCGWAS_Gene_Compare,11_Excel_Summary/{Figures,Tables}}
+cmd = "mkdir -p 02_ddx/{01_DDx_Results,02_DDx_SigSNP,03_DDx_Clump,04_FUMA_Results/{SNP2GENE,Cell_Type,Image/{01_SNP_Manhattan,02_Gene_Manhattan,03_MAGMA_Tissue,04_SNP_Annot,05_Cell_Type}},05_CCGWAS_Results,06_CCGWAS_SigSNP,07_SNP_Compare,08_DDx_Gene_Result,09_CCGWAS_Gene_Result,10_DDx_CCGWAS_Gene_Compare,11_Excel_Summary/{Figures,Tables}}"
+system(cmd)
 ```
-Run SNP- and gene-level differentiation analysis in R
+Specify compared trait names
+```
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+```
+Run SNP- and gene-level differentiation analysis
 ```
 source("02_ddx/DDx_Workflow.r")
 source("02_ddx/DDx_Workflow_params.r")
-
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
 
 # snp-level
 ddx_wrap_up(t1, t2)
