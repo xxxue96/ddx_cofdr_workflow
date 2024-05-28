@@ -59,18 +59,21 @@ lapply(c(t1, t2), function(pheno){
 ```
 Analyze gwas via FUMA "SNP2GENE" and "Cell Type" module. Save corresponding zipped results files to 01_data/04_FUMA_Results/{SNP2GENE,Cell_Type} and rename results files with trait names
 
-## 2. Differeniation analysis
+## 2. Differentiation analysis
 Make subdirectories
 ```
 mkdir -p 02_ddx/{01_DDx_Results,02_DDx_SigSNP,03_DDx_Clump,04_FUMA_Results/{SNP2GENE,Cell_Type,Image/{01_SNP_Manhattan,02_Gene_Manhattan,03_MAGMA_Tissue,04_SNP_Annot,05_Cell_Type}},05_CCGWAS_Results,06_CCGWAS_SigSNP,07_SNP_Compare,08_DDx_Gene_Result,09_CCGWAS_Gene_Result,10_DDx_CCGWAS_Gene_Compare,11_Excel_Summary/{Figures,Tables}}
+```
+Start R and specify compared traits t1 and t2
+```
+rm(list=ls())
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
 ```
 Run SNP- and gene-level differentiation analysis
 ```
 source("02_ddx/DDx_Workflow.r")
 source("02_ddx/DDx_Workflow_params.r")
-
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
 
 # snp-level
 ddx_wrap_up(t1, t2)
@@ -80,16 +83,13 @@ ddx_wrap_up(t1, t2)
 # gene-level
 ddx_wrap_up_gene(t1, t2)
 ```
-Format results to readable excel files in R
+Format results to readable excel files
 ```
 source("02_ddx/06_01_DDx_Format_Excel.r")
 source("02_ddx/06_02_DDx_Format_Image.r")
 source("02_ddx/06_03_DDx_Excel_Summary.r")
 source("02_ddx/06_03_DDx_Excel_Summary_more_info.r")
 source("02_ddx/06_04_DDx_Count_Res.r")
-
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
 
 # format differentiation results to excel
 DDx_Format_Excel(t1, t2, save_dir="02_ddx/11_Excel_Summary/Tables")
@@ -110,20 +110,23 @@ Make subdirectories
 ```
 mkdir -p 02_ddx/{12_mtCOJO_Results,13_mtCOJO_Excel_Summary/{Figures,Tables}}
 ```
+Start R and specify multiple compared traits
+```
+rm(list=ls())
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+t3 = "B2"
+```
 Run SNP- and gene-level differentiation analysis across multiple traits in R to find SNPs and genes specific to trait t1
 ```
 source("02_ddx/mtCOJO_Workflow.r")
 source("02_ddx/mtCOJO_Workflow_params.r")
 
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
-t3 = "B2"
-
 # @mtcojo_name: set a pseudo-name for the mtCOJO-derived trait sumstats. Default is NULL to directly concatenate t1 and t2phenos as a pseudo-name.
 mtCOJO_wrap_up(t1, t2phenos=c(t2,t3), mtcojo_name=NULL) # more t2phenos are accepted
 mtCOJO_wrap_up_gene(t1, t2phenos=c(t2,t3), mtcojo_name=NULL)
 ```
-Format mtCOJO results to readable excel files in R
+Format mtCOJO results to readable excel files
 ```
 source("02_ddx/07_01_mtcojo_Format_Excel.r")
 source("02_ddx/07_02_mtcojo_Format_Image.r")
@@ -132,9 +135,6 @@ source("02_ddx/07_03_mtcojo_Excel_Summary_more_info.r")
 source("02_ddx/07_04_mtcojo_Count_Res.r")
 source("02_ddx/mtCOJO_Workflow_params.r")
 
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
-t3 = "B2"
 t2phenos = c(t2, t3) # more t2phenos are accepted
 traits = c(t1, t2phenos)
 
@@ -156,13 +156,16 @@ Make subdirectories
 ```
 mkdir -p 03_cofdr/{01_Cofdr_Result,02_Cofdr_SigSNP,03_Cofdr_Clump,04_Cofdr_Gene_Result,05_01_Cofdr_FUMA_Input,05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC},06_gwas_pw_Result,07_gwas_pw_SigSNP,08_HyPrColoc_Result,09_sigSNP_Comparison,10_Excel_Summary/{Figures,Tables}}
 ```
+Start R and specify compared traits t1 and t2
+```
+rm(list=ls())
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+```
 Run SNP- and gene-level colocalization analysis
 ```
 source("03_cofdr/Cofdr_Workflow.r")
 source("03_cofdr/Cofdr_Workflow_params.r")
-
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
 
 # snp-level
 cofdr_wrap_up(t1, t2)
@@ -179,9 +182,6 @@ source("03_cofdr/06_02_Cofdr_Format_Image.r")
 source("03_cofdr/06_03_Cofdr_Excel_Summary.r")
 source("03_cofdr/06_03_Cofdr_Excel_Summary_more_info.r")
 source("03_cofdr/06_04_Cofdr_Count_Res.r")
-
-t1 = "Flu_h_White"
-t2 = "Pneumonia.meta"
 
 # format colocalization results to excel
 Cofdr_Format_Excel(t1, t2, save_dir="03_cofdr/10_Excel_Summary/Tables")
@@ -202,7 +202,14 @@ Make subdirectories
 ```
 mkdir -p 03_cofdr/11_Multi_Cofdr_Summary/Tables
 ```
-Run SNP- and gene-level colocalization analysis across multiple traits in R to find SNPs and genes associated with multiple traits
+Start R and specify multiple compared traits
+```
+rm(list=ls())
+t1 = "Flu_h_White"
+t2 = "Pneumonia.meta"
+t3 = "B2"
+```
+Run SNP- and gene-level colocalization analysis across multiple traits to find SNPs and genes associated with multiple traits
 ```
 source("03_cofdr/Multi_Cofdr_Workflow.r")
 source("03_cofdr/Multi_Cofdr_Workflow_params.r")
@@ -213,9 +220,9 @@ source("03_cofdr/Multi_Cofdr_Workflow_params.r")
 # 4. Run gene-based cofdr among multiple traits
 
 #@cofdr_name: set a pseudo-name for the multi-cofdr/hyprcoloc derived trait sumstats. Default is NULL to directly concatenate t1 and t2_cofdr as a pseudo-name. 
-Run_Multi_Cofdr(t1="Flu_h_White", t2_cofdr=c("Pneumonia.meta","B2"), t2_hyprcoloc=c("Pneumonia.meta","B2"), cofdr_name=NULL)
+Run_Multi_Cofdr(t1, t2_cofdr=c(t2, t3), t2_hyprcoloc=c(t2, t3), cofdr_name=NULL)
 ```
-Format multi-trait colocalization results to readable excel files in R
+Format multi-trait colocalization results to readable excel files
 ```
 source("03_cofdr/06_01_Cofdr_Format_Excel.r")
 source("03_cofdr/07_03_Multi_Cofdr_Excel_Summary.r")
@@ -223,11 +230,8 @@ source("03_cofdr/07_03_Multi_Cofdr_Excel_Summary_more_info.r")
 source("03_cofdr/07_04_Multi_Cofdr_Count_Res.r")
 source("03_cofdr/Multi_Cofdr_Workflow_params.r")
 
-t1 = "Flu_h_White"
-t2 = c("Pneumonia.meta","B2")
-
 # format multi-trait colocalization results to excel
-Cofdr_Format_Excel(t1, t2, save_dir="11_Multi_Cofdr_Summary/Tables", multi_cofdr=TRUE)
+Cofdr_Format_Excel(t1, t2=c(t2,t3), save_dir="11_Multi_Cofdr_Summary/Tables", multi_cofdr=TRUE)
 
 # summarize all excel files in excel_dir (multiple excel_dir are accepted)
 Multi_Cofdr_Excel_Summary(excel_dir="03_cofdr/11_Multi_Cofdr_Summary/Tables", save_path=paste0("03_cofdr/11_Multi_Cofdr_Summary/", t1, "_multi_cofdr_summary.xlsx"))
