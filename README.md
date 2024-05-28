@@ -173,7 +173,8 @@ cofdr_wrap_up(t1, t2)
 # Analyze cofdr-derived gwas in 03_cofdr/05_01_Cofdr_FUMA_Input via FUMA when there are sig.snps, and save results to 03_cofdr/05_02_Cofdr_FUMA_Result/{SNP2GENE,GENE2FUNC}
 
 # gene-level
-cofdr_wrap_up_gene2(t1, t2) # when gene-level results for each trait are not available in 01_data/03_Gene_Result, please use cofdr_wrap_up_gene(t1, t2)
+# when gene-level results for each trait are not available in 01_data/03_Gene_Result, please use cofdr_wrap_up_gene(t1, t2)
+cofdr_wrap_up_gene2(t1, t2) 
 ```
 Format results to readable excel files
 ```
