@@ -31,7 +31,7 @@ format_sig_snp <- function(pheno, sheets)
 	# T8.magma_gene_set
 	magma_gene_set = dat$T8.magma_gene_set[-1, ] %>% row_to_names(row_number = 1) 
 	if(nrow(magma_gene_set)>0){
-		magma_gene_set = magma_gene_set %>% cbind(pheno) %>% filter(FDR_mtCOJO<0.05) %>% select(Gene_set, pheno) %>% unique
+		magma_gene_set = magma_gene_set %>% cbind(pheno) %>% filter(FDR_mtCOJO<FDRthres2) %>% select(Gene_set, pheno) %>% unique
 	} else{
 		magma_gene_set = as.data.frame(matrix(ncol=2, nrow=0))		
 	}
@@ -40,7 +40,7 @@ format_sig_snp <- function(pheno, sheets)
 	# T9.magma_tissu
 	magma_tissue = dat$T9.magma_tissu[-1, ] %>% row_to_names(row_number = 1)
 	if(nrow(magma_tissue)>0){
-		magma_tissue = magma_tissue %>% cbind(pheno) %>% filter(FDR_mtCOJO<0.05) %>% select(Tissue, pheno) %>% unique				
+		magma_tissue = magma_tissue %>% cbind(pheno) %>% filter(FDR_mtCOJO<FDRthres2) %>% select(Tissue, pheno) %>% unique				
 	} else{
 		magma_tissue = as.data.frame(matrix(ncol=2, nrow=0))		
 	}
@@ -49,7 +49,7 @@ format_sig_snp <- function(pheno, sheets)
 	# T10.magma_cell_type
 	magma_cell_type = dat$T10.magma_cell_type[-1, ] %>% row_to_names(row_number = 1)
 	if(nrow(magma_cell_type)>0){
-		magma_cell_type = magma_cell_type %>% cbind(pheno) %>% filter(FDR_mtCOJO<0.05) %>% select(Cell_type, pheno) %>% unique
+		magma_cell_type = magma_cell_type %>% cbind(pheno) %>% filter(FDR_mtCOJO<FDRthres2) %>% select(Cell_type, pheno) %>% unique
 	} else{
 		magma_cell_type = as.data.frame(matrix(ncol=2, nrow=0))		
 	}

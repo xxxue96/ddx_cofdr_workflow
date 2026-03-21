@@ -122,15 +122,15 @@ format_sig_snp_more_info <- function(pheno, sheets)
 	commonGene_ddx_ccgwas = reformat_gene(pheno, commonGene_ddx_ccgwas)
 	
 	# T11.magma_gene_set
-	magma_gene_set = dat$T11.magma_gene_set[-1, ] %>% row_to_names(row_number = 1) %>% mutate(FDR_DDx=as.numeric(FDR_DDx)) %>% filter(FDR_DDx<0.05)
+	magma_gene_set = dat$T11.magma_gene_set[-1, ] %>% row_to_names(row_number = 1) %>% mutate(FDR_DDx=as.numeric(FDR_DDx)) %>% filter(FDR_DDx<FDRthres2)
 	magma_gene_set = reformat_set(pheno, magma_gene_set)
 	
 	# T12.magma_tissue
-	magma_tissue = dat$T12.magma_tissue[-1, ] %>% row_to_names(row_number = 1) %>% mutate(FDR_DDx=as.numeric(FDR_DDx)) %>% filter(FDR_DDx<0.05)
+	magma_tissue = dat$T12.magma_tissue[-1, ] %>% row_to_names(row_number = 1) %>% mutate(FDR_DDx=as.numeric(FDR_DDx)) %>% filter(FDR_DDx<FDRthres2)
 	magma_tissue = reformat_set(pheno, magma_tissue)
 	
 	# T13.magma_cell_type
-	magma_cell_type = dat$T13.magma_cell_type[-1, ] %>% row_to_names(row_number = 1) %>% mutate(FDR_DDx=as.numeric(FDR_DDx)) %>% filter(FDR_DDx<0.05)
+	magma_cell_type = dat$T13.magma_cell_type[-1, ] %>% row_to_names(row_number = 1) %>% mutate(FDR_DDx=as.numeric(FDR_DDx)) %>% filter(FDR_DDx<FDRthres2)
 	magma_cell_type = reformat_set(pheno, magma_cell_type)
 	
 	tmp = c(list(commonLoci_ddx_ccgwas), commonGene_ddx_ccgwas, list(magma_gene_set), list(magma_tissue), list(magma_cell_type))

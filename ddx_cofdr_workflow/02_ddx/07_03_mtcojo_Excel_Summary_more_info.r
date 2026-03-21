@@ -148,15 +148,15 @@ format_sig_snp_more_info <- function(pheno, sheets)
 	gene_mtcojo = reformat_gene(pheno, gene_mtcojo)
 	
 	# T8.magma_gene_set
-	magma_gene_set = dat$T8.magma_gene_set[-1, ] %>% row_to_names(row_number = 1) %>% filter(FDR_mtCOJO<0.05)
+	magma_gene_set = dat$T8.magma_gene_set[-1, ] %>% row_to_names(row_number = 1) %>% filter(FDR_mtCOJO<FDRthres2)
 	magma_gene_set = reformat_set(pheno, magma_gene_set)
 	
 	# T9.magma_tissue
-	magma_tissue = dat$T9.magma_tissue[-1, ] %>% row_to_names(row_number = 1) %>% filter(FDR_mtCOJO<0.05)
+	magma_tissue = dat$T9.magma_tissue[-1, ] %>% row_to_names(row_number = 1) %>% filter(FDR_mtCOJO<FDRthres2)
 	magma_tissue = reformat_set(pheno, magma_tissue)
 	
 	# T10.magma_cell_type
-	magma_cell_type = dat$T10.magma_cell_type[-1, ] %>% row_to_names(row_number = 1) %>% filter(FDR_mtCOJO<0.05)
+	magma_cell_type = dat$T10.magma_cell_type[-1, ] %>% row_to_names(row_number = 1) %>% filter(FDR_mtCOJO<FDRthres2)
 	magma_cell_type = reformat_set(pheno, magma_cell_type)
 	
 	tmp = c(list(sig_snps), gene_mtcojo, list(magma_gene_set), list(magma_tissue), list(magma_cell_type))
